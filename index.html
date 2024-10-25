@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="object-src 'self'; media-src *">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <title>Lê Thành Phương Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/ảnh thẻ.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    }
+    #map {
+    position: absolute;    
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/ảnh thẻ.png" alt="Lê Thành Phương" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Lê Thành Phươngk">Lê Thành Phương</h1>
+
+          <p class="title">Video Editor</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Hiển thị liên hệ</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:intiujack@gmail.com" class="contact-link">intiujack@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Điện thoại</p>
+
+              <a href="tel:+84947814411" class="contact-link">0947814411</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Ngày sinh</p>
+
+              <time datetime="1999-02-04">04/02/1999</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Địa chỉ</p>
+
+              <address>41/10 Ngô Đến, Vĩnh Phước, Nha Trang, Khánh Hòa</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          
+          <li class="social-item">
+            <a href="https://www.facebook.com/people/L%C3%AA-Th%C3%A0nh-Ph%C6%B0%C6%A1ng/100075217611349/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.behance.net/lethanhphuong99" class="social-link">
+              <ion-icon name="logo-behance"></ion-icon>
+            </a>
+          </li>
+          
+          <!--<li class="social-item">
+            <a href="https://twitter.com/PhngLThaNh13" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>-->
+
+          <li class="social-item">
+            <a href="https://github.com/lethanhphuong1999" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Về Tôi</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Sơ yếu lý lịch</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Dự án</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Bài viết</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Liên hệ</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="về tôi">
+
+        <header>
+          <h2 class="h2 article-title">Về Tôi</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Là một người đang làm việc quay dựng video, có tính học hỏi và muốn phát triển bản thân. 
+            Muốn được thử sức với nhiều công việc khác ngoài quay và dựng video
+
+          </p>       
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">Những lĩnh vực tôi làm</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Video Editor</h4>
+
+                <p class="service-item-text">
+                  Chỉnh sửa video cho cả 2D và 3D cho marketing
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Promotional design</h4>
+
+                <p class="service-item-text">
+                  Thiết kế banner quảng cáo, poster trên các mạng xã hội
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Animator</h4>
+
+                <p class="service-item-text">
+                  Diễn hoạt phim hoạt hình 2D
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Illustration</h4>
+
+                <p class="service-item-text">
+                  Vẽ minh họa 2d cho thiết kế và diễn hoạt
+                </p>
+              </div>
+
+            </li>
+
+            
+
+          </ul>
+
+        </section>
+        
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Công ty</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="https://www.sapo.vn/">
+                <img src="./assets/images/sp_logo.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.facebook.com/BeetTech/">
+                <img src="./assets/images/bt_logo.png" alt="client logo">
+              </a>
+            </li>
+            
+            <li class="clients-item">
+              <a href="https://minhduy.vn/">
+                <img src="./assets/images/mds_logo.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://khatech.com/">
+                <img src="./assets/images/kt_logo.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://ecovi.com.vn/">
+                <img src="./assets/images/Ecovi-logo.png" alt="client logo">
+              </a>
+            </li>
+          
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="sơ yếu lý lịch">
+
+        <header>
+          <h2 class="h2 article-title">Sơ yếu lý lịch</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Học vấn</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Khatech Academy</h4>
+
+              <span>9/2022 - 12/2022</span>
+
+              <p class="timeline-text">
+                Bây giờ tôi vừa đã tốt nghiệp tại trung tâm Khatech vào buổi tối với khóa đồ họa quảng cáo dùng Photoshop, Illustrator, Coreldraw trong 3 tháng.
+              </p>
+
+            </li>
+            
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Đại học Nha Trang</h4>
+
+              <span>2017 — 2021</span>
+
+              <p class="timeline-text">
+                Đây là khoảng thời gian tôi là sinh viên công nghệ thông tin của trường.
+              </p>
+
+            </li>
+            
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Trường THPT Trần Bình Trọng</h4>
+
+              <span>2014 — 2016</span>
+
+              <p class="timeline-text">
+                Lúc này tôi đang là học sinh cấp 3.
+              </p>
+
+            </li>     
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Kinh nghiệm</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Nhân viên quay dựng tại EcoVi</h4>
+
+              <span>03/2024 - 07/2024</span>
+
+              <p class="timeline-text">
+                Quay và dựng video ngắn, đồng thời thiết kế banner cho công ty trên mạng xã hội như Tiktok, Facebook
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Video editor tại Khatech Academy</h4>
+
+              <span>02/2023 - 02/2024</span>
+
+              <p class="timeline-text">
+                Làm dựng video, thiết kế banner, poster cho công ty trên mạng xã hội.
+              </p>
+
+            </li>
+            
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Học việc nhân viên thiết kế tại Minh Duy Solutions</h4>
+
+              <span>08/2022 - 09/2022</span>
+
+              <p class="timeline-text">
+                Làm thiết kế banner, poster cho công ty trên facebook.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Cộng tác viên xử lý hình ảnh tại Beetech</h4>
+
+              <span>03/2022 - 08/2022</span>
+
+              <p class="timeline-text">
+                Làm chỉnh sửa ảnh nhận diện đường đi trong hệ thống AI xe tự lái theo KPI sản phẩm/ngày.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Nhân viên kinh doanh tại Sapo</h4>
+
+              <span>10/2021 - 03/2022</span>
+
+              <p class="timeline-text">
+                Tìm kiếm, tư vấn khách hàng mới và hỗ trợ giải đáp thắc mắc khi sử dụng phần mềm của khách hàng cũ.
+              </p>
+
+            </li>
+            
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Kĩ năng của tôi</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Adobe Photoshop</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Adobe Illustrator</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Adobe Premiere Pro</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">DaVinci Resolve</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90;"></div>
+              </div>
+
+            </li>
+            
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Adobe After Effect</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80;"></div>
+              </div>
+
+            </li>
+                
+
+            
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="dự án">
+
+        <header>
+          <h2 class="h2 article-title">Dự án</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>Tất cả</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Promotional Design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Video Marketing</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Mobile Apps</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Chọn danh mục</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>Tất cả</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Promotional Design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Video Marketing</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Mobile Apps</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="video marketing">
+              <a href="https://www.tiktok.com/@hocnhanhai/video/7240840794435882246">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 5.jpeg" alt="Video Tiktok" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Video Tiktok (200.000 lượt xem)</h3>
+
+                <p class="project-category">Video Marketing</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="video marketing">
+              <a href="https://www.tiktok.com/@hocnhanhai/video/7235620605268151553">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 6.jpeg" alt="Video Tiktok" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Video Tiktok (100.000 lượt xem)</h3>
+
+                <p class="project-category">Video Marketing</p>
+
+              </a>
+            </li>
+
+
+            <li class="project-item  active" data-filter-item data-category="video marketing">
+              <a href="https://www.tiktok.com/@hocnhanhai/video/7258626043534232837">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 7.jpeg" alt="Video Tiktok" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Video Tiktok (150.000 lượt xem)</h3>
+
+                <p class="project-category">Video Marketing</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="video marketing">
+              <a href="https://youtu.be/FQrEgg0NbqE">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 8.png" alt="Video sản phẩm trong khóa học của Khatech" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Video sản phẩm trong khóa học của Khatech</h3>
+
+                <p class="project-category">Video Marketing</p>
+
+              </a>
+            </li>
+        
+
+            <li class="project-item  active" data-filter-item data-category="mobile apps">
+              <a href="https://lethanhphuong1999.github.io/Unigram-Website/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 1.png" alt="mạng xã hội unigram" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Mạng xã hội unigram</h3>
+
+                <p class="project-category">Mobile Apps</p>
+
+              </a>
+            </li>
+            
+
+            <li class="project-item  active" data-filter-item data-category="promotional design">
+              <a href="https://www.facebook.com/photo.php?fbid=472231824901699&set=pb.100063446570223.-2207520000..&type=3">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 2.jpg" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Poster Minh Duy Solutions</h3>
+
+                <p class="project-category">Promotional Design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="promotional design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project 3.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Banner Minh Duy Solutions</h3>
+
+                <p class="project-category">Promotional Design</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="bài viết">
+
+        <header>
+          <h2 class="h2 article-title">Bài viết</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="https://das.info.vn/blog/LMHceKTPPhTU">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 2.png" alt="Graphic Design là gì? loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Huy Tạ</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2020-06-16">Jun 16, 2020</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Graphic Design là gì?</h3>
+
+                  <p class="blog-text">
+                    Graphic Design là một nhánh trong Communication Design (Thiết kế Truyền Thông). 
+                    Truyền thông ở đây là hoạt động truyền đạt thông tin từ chỗ này qua chỗ khác.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://das.info.vn/blog/a-9tjVNH8Di_">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 1.png" alt="Sự tự tin và Designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Huy Tạ</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2020-06-16">Jun 16, 2020</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Sự tự tin và Designer</h3>
+
+                  <p class="blog-text">
+                    Việc designer hiện nay đa phần thiếu kiến thức nền tảng thì ai cũng biết rồi. 
+                    Nhưng thiết nghĩ với tư cách là giáo viên thì Huy nên nhìn sâu hơn nữa.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+
+            <li class="blog-post-item">
+              <a href="https://das.info.vn/blog/Ah3ZbJG_XYyn">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 3.png" alt="Tăng thu nhập cho Graphic Designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Huy Tạ</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2020-06-16">Jun 16, 2020</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Tăng thu nhập cho Graphic Designer</h3>
+
+                  <p class="blog-text">
+                    Graphic design (GD) là một ngành còn mới ở Việt Nam, chỉ khởi sắc vào khoảng 2 3 năm gần đây. 
+                    Vì thế cũng khó tránh khỏi việc đa số nhìn nhận nó như một ngành Mài ghế công ty - Cuối tháng nhận tiền như thường lệ. 
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://colorme.vn/blog/layout-la-gi-tam-quan-trong-cua-layout-trong-thiet-ke">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 4.jpg" alt="Layout là gì? Tầm quan trọng của Layout trong thiết kế" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Hà Phương</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-07-04">Jul 04, 2019</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Layout là gì? Tầm quan trọng của Layout trong thiết kế</h3>
+
+                  <p class="blog-text">
+                    Thông thường, một sản phẩm thiết kế nếu không có layout phù hợp sẽ khó tạo được ấn tượng tốt với người xem. 
+                    Vậy layout là gì mà quan trọng đến thế? Hãy cùng nhau tìm hiểu nhé.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://designervn.net/threads/mau-sac-trong-thiet-ke-kien-thuc-co-ban-ma-designer-phai-biet.7346/">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 5.png" alt="Màu sắc trong thiết kế: Kiến thức cơ bản mà Designer phải biết" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">HoaiThuong</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-12-01">Dec 01, 2021</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Màu sắc trong thiết kế: Kiến thức cơ bản mà Designer phải biết</h3>
+
+                  <p class="blog-text">
+                    Màu sắc đóng vai trò quan trọng trong thiết kế và cuộc sống. Nó có thể thu hút mắt bạn vào một bức hình, 
+                    khơi dậy một xúc cảm, thậm chí là truyền đi những điều quan trọng mà không cần dùng đến từ ngữ.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://das.info.vn/blog/YG-Vm3RqPJwR">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog 6.png" alt="Thuyết phục khách hàng - Phần 1" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Huy Tạ</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2020-06-16">Jun 16, 2020</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Thuyết phục khách hàng - Phần 1</h3>
+
+                  <p class="blog-text">
+                    Thiết kế đồ hoạ là một ngành không chỉ đòi hỏi ta có tư duy thẩm mỹ, mà còn các kỹ năng mềm khác. 
+                    Trong số đó, thuyết phục khách hàng chắc chắn là trăn trở lớn của nhiều bạn.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="liên hệ">
+
+        <header>
+          <h2 class="h2 article-title">Liên hệ</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure id="map">
+          </figure>          
+        </section>
+           
+        <section class="contact-form">
+
+          <h4 class="h4 form-title">Nếu bạn muốn liên hệ với tôi. Vui lòng nhập thông tin ở dưới</h4>
+         
+          <div class="container">           
+            <form target="_blank" action="https://formsubmit.co/intiujack@gmail.com" method="POST">
+              <div class="input-wrapper">           
+                <input type="text" name="name" class="form-input" placeholder="Họ và tên" required>
+                <input type="email" name="email" class="form-input" placeholder="Địa chỉ Email" required>
+                </div>                
+              <textarea placeholder="Tin nhắn của bạn" class="form-input" name="message" rows="10" required></textarea>
+              <button type="submit" class="form-btn"><ion-icon name="paper-plane"></ion-icon>
+                <span>Gửi tin nhắn</span></button>
+            </form>
+          </div>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
